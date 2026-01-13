@@ -100,18 +100,6 @@ const Contact = () => {
               />
             </label>
 
-            <label className="space-y-3">
-              <span className="field-label">Địa chỉ email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., Hoquang@gmail.com"
-              />
-            </label>
 
             <label className="space-y-3">
               <span className="field-label">Thông điệp của bạn</span>
@@ -122,7 +110,7 @@ const Contact = () => {
                 required
                 rows={5}
                 className="field-input"
-                placeholder="Hãy chia sẻ suy nghĩ hoặc thắc mắc của bạn...."
+                placeholder="Hãy chia sẻ suy nghĩ hoặc thắc mắc của bạn, ghi kèm gmail của bạn để tôi có thể phản hồi sớm nhất...."
               />
             </label>
 

@@ -65,10 +65,12 @@ const About = () => {
             <div>
               <p className="grid-headtext">Linh hoạt trong giao tiếp & môi trường làm việc</p>
               <p className="grid-subtext">
-                Tôi sẵn sàng làm việc theo ca, hỗ trợ từ xa hoặc trực tiếp, thích nghi nhanh với môi trường và
-                quy trình làm việc của doanh nghiệp.
+                Tôi sẵn sàng làm việc theo ca, hỗ trợ từ xa hoặc trực tiếp, thích nghi nhanh với môi trường và quy trình
+                làm việc của doanh nghiệp.
               </p>
-              <Button name="Liên hệ với tôi" isBeam containerClass="w-full mt-10" />
+              <a href="#contact">
+                <Button name="Liên hệ với tôi" isBeam containerClass="w-full mt-10" />
+              </a>
             </div>
           </div>
         </div>
