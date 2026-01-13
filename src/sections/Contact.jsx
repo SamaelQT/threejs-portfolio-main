@@ -4,6 +4,11 @@ import emailjs from '@emailjs/browser';
 import useAlert from '../hooks/useAlert';
 import Alert from '../components/Alert';
 
+// ✅ INIT EMAILJS (CHỈ 1 LẦN)
+emailjs.init({
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
+
 const Contact = () => {
   const formRef = useRef(null);
 
@@ -27,17 +32,15 @@ const Contact = () => {
     if (loading) return;
     setLoading(true);
 
+    // 🧪 TEST ENV (xóa sau khi OK)
+    console.log('EMAILJS PUBLIC KEY:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
     emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      )
+      .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      })
       .then(() => {
         setLoading(false);
         showAlert({
